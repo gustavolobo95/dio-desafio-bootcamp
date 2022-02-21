@@ -13,14 +13,6 @@ public static void main(String[] args) {
 	
 	System.out.println(curso1);
 	
-	Curso curso2 = new Curso();
-	
-	curso2.setTitulo("Curso de Javascript");
-	curso2.setDescricao("Programação Web moderna");
-	curso2.setCargaHoraria(50);
-	
-	System.out.println(curso2);
-	
 	Mentoria mentoria1 = new Mentoria();
 	
 	mentoria1.setTitulo("Mentoria de Java");
@@ -29,5 +21,36 @@ public static void main(String[] args) {
 	
 	System.out.println();
 	System.out.println(mentoria1);
+	System.out.println("");
+	
+	Bootcamp bootcamp = new Bootcamp();
+	
+	bootcamp.setNome("Bootcamp DIO Java Developer");
+	bootcamp.setDescricao("Desenvolvido para acelerar a carreira de desenvolvedores em formação!");
+	bootcamp.getConteudos().add(curso1);
+	bootcamp.getConteudos().add(mentoria1);
+	
+	Dev devGustavo = new Dev();
+	devGustavo.setNome("Gustavo");
+	devGustavo.inscreverBootcamp(bootcamp);
+	System.out.println("Conteudos Inscritos Gustavo: " + devGustavo.getConteudosInscritos());
+	devGustavo.progredir();
+	devGustavo.progredir();
+	System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+	System.out.println("Conteudos Inscritos Gustavo: " + devGustavo.getConteudosInscritos());
+	System.out.println("Conteudos Concluidos Gustavo: " + devGustavo.getConteudosConcluidos());
+	System.out.println("XP: " + devGustavo.calcularXP());
+	
+	System.out.println("");
+	
+	Dev devVictor = new Dev();
+	devVictor.setNome("Victor");
+	devVictor.inscreverBootcamp(bootcamp);
+	System.out.println("Conteudos Inscritos Dev Victor: " + devVictor.getConteudosInscritos());
+	devVictor.progredir();
+	System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+	System.out.println("Conteudos Inscritos Dev Victor: " + devVictor.getConteudosInscritos());
+	System.out.println("Conteudos Concluidos Victor: " + devVictor.getConteudosConcluidos());
+	System.out.println("XP: " + devVictor.calcularXP());
 } 
 }
